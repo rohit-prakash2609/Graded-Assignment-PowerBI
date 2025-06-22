@@ -1,4 +1,4 @@
-# 📊 Global Superstore Command Center – Power BI Dashboard
+# 📊 Global Superstore – Power BI Dashboard
 
 ## 📝 Project Overview
 
