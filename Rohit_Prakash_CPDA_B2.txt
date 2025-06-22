@@ -1,0 +1,69 @@
+
+
+## Measures ##
+
+Total Customers = DISTINCTCOUNT(Customers[Customer ID])
+
+Total Products = COUNTROWS('Product')
+
+Total Returns = COUNTROWS(Returns)
+
+Total Orders = DISTINCTCOUNT(Sales[Order ID])
+
+Total Profit = SUM(Sales[Profit])
+
+Total Qty Sold = SUM(Sales[Quantity])
+
+Total Revenue = SUM(Sales[Sales])
+
+Total Shipping Cost = SUM(Sales[Shipping Cost])
+
+YOY Profit = CALCULATE([Total Profit], SAMEPERIODLASTYEAR('Calender'[Date]))
+
+YOY Profit Growth % = DIVIDE([Total Profit] - [YOY Profit], [YOY Profit])
+
+YOY Qty = CALCULATE([Total Qty Sold], SAMEPERIODLASTYEAR('Calender'[Date]))
+
+YOY Qty Growth % = DIVIDE([Total Qty Sold] - [YOY Qty], [YOY Qty])
+
+YOY Sales = CALCULATE([Total Revenue], SAMEPERIODLASTYEAR('Calender'[Date]))
+
+YOY Sales Growth % = DIVIDE([Total Revenue] - [YOY Sales], [YOY Sales])
+
+
+
+Profit Margin% = [Total Profit]/[Total Revenue]
+
+
+Avg Shipping Cost/Order = [Total Shipping Cost]/[Total Orders]
+
+Avg profit = AVERAGE(Sales[Profit])
+
+Avg Discount = AVERAGE(Sales[Discount])
+
+Avg Order Value = [Total Revenue]/[Total Orders]
+
+Avg Profit/Order = [Total Profit]/[Total Orders]
+
+Avg Qty/Order = [Total Qty Sold]/[Total Orders]
+
+Avg Value/qty = [Total Revenue]/SUM(Sales[Quantity])
+
+Avg Lead Days = AVERAGE(Sales[Order Lead Time])
+
+
+
+
+
+
+
+
+
+
+## Columns ##
+
+Discount Slab = IF('Sales'[Discount] <= .10, "0%–10%", IF('Sales'[Discount] <= .2, "11%–20%", IF('Sales'[Discount] <= .3, "21%–30%", IF('Sales'[Discount] <= .4, "31%–40%", IF('Sales'[Discount] <= .5, "41%–50%", IF('Sales'[Discount] <= .6, "51%–60%", IF('Sales'[Discount] <= .7, "61%–70%", IF('Sales'[Discount] <= .8, "71%–80%", IF('Sales'[Discount] <= .9, "81%–90%", "Above 90%")))))))))
+
+
+Order Lead Time = DATEDIFF('Sales'[Order Date], 'sales'[Ship Date], DAY)
+
