@@ -1,4 +1,4 @@
-# 📊 Global Superstore Command Center – Power BI Dashboard
+# 📊 Global Superstore – Power BI Dashboard
 
 ## 📝 Project Overview
 
@@ -104,3 +104,5 @@ Here’s a sample of insights discovered through this dashboard:
 **Rohit Prakash**  
 Pursuing Data Analytics Certification  
 *Transitioning from Retail to Data Analytics*
+
+![image](https://github.com/user-attachments/assets/cfe6888b-96d1-486b-837f-7842d22a56ff)
